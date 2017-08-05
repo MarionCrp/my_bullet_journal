@@ -1,0 +1,16 @@
+.tasks-card
+  .title-row
+    h3.col-20 To do list
+    = link_to "#" do
+      span.col-4.icon-plus-circle
+  .tasks-list
+    .task
+      span.check-box.icon-box
+      span.label.icon Ramen
+    .task
+      span.check-box.icon-checked-box
+      span.label.icon Crème brulée au thé !
+
+    .task.new-task.form-group.row hidden="true"
+      .col-4.span.check-box.icon-box
+      input.col-18 type="text"

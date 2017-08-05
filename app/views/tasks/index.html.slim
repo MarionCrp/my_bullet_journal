@@ -1,5 +1,58 @@
-= render "day_tasks"
+.day-tasks-container
+  h2 30th July 2017
+  .tasks-cards-container
+    .row
+      .col-lg-8
+        = render "list"
+
+      .col-lg-8
+        = render "list"
+
+      .col-lg-8
+        = render "list"
+
 
 hr
 
-= render "month_tasks"
+.month-tasks-container
+  .row
+    .col-lg-1.col-sm-2.col-2
+    .col-lg-1.col-sm-2.col-2
+    .col-lg-19.col-sm-14.col-14
+      h2 July 2017
+    .col-lg-1.col-sm-2.col-2.daily-task-title Crossfit
+    .col-lg-1.col-sm-2.col-2.daily-task-title Kendo
+    .col-lg-1.col-sm-2.col-2.daily-task-title Yoga
+
+  .month-cards-container
+    .calendar
+      - week_days = %w(L M M J V S D)
+      - 30.times do |n|
+        .row
+          .col-lg-1.col-sm-2.col-2.week-day #{ week_days[n % 7]}
+          .col-lg-1.col-sm-2.col-2.day #{n+1}
+          .col-lg-19.col-sm-14.col-14.task-title Rendez-vous chez l'osthéo
+          .col-lg-1.col-sm-2.col-2
+            = link_to "#" do
+              .icon-checked-circle.checked
+          .col-lg-1.col-sm-2.col-2
+            = link_to "#" do
+              .icon-checked-circle.unchecked
+          .col-lg-1.col-sm-2.col-2
+            = link_to "#" do
+              .icon-checked-circle.unchecked
+
+hr
+
+.random-list-container
+  h2 Random Lists
+  .tasks-cards-container
+    .row
+      .col-lg-8
+        = render "list"
+
+      .col-lg-8
+        = render "list"
+
+      .col-lg-8
+        = render "list"
