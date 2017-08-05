@@ -1,0 +1,38 @@
+doctype html
+html
+  head
+    title BulletJournal
+    meta name="viewport" content="width=device-width, initial-scale=1.0"
+    = csrf_meta_tags
+
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+
+    link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700|Kranky|Sue+Ellen+Francisco" rel="stylesheet"/
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+
+  body
+    header
+      .row.d-flex.align-items-center
+        .col-lg-3.col-md-3.logo = image_tag "open-blank-book.svg"
+        .col-lg-20.col-md-19.navbar-title My Bullet Journal
+  .row.journal-body
+    .col-journal-nav.col-lg-5.navbar
+      .menu-title Menu
+      ul
+        li
+          = link_to "Daily", tasks_path, class:"active"
+        li
+          a href="#" Weekly
+        li
+          a href="#" Monthly
+        li
+          a data-toggle="collapse" href="#collapseItem" aria-expanded="false" aria-controls="collapseItem" To do
+        .collapse#collapseItem
+          ul
+            li
+              a href="#" Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+
+
+    .col-journal-content.col-lg-19
+      .container
+        = yield

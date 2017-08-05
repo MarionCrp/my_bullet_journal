@@ -1,0 +1,54 @@
+header
+  background-color: $grey-darken-4
+  height: $header-height
+
+  .row
+    height: 100%
+    padding: 0 5rem
+
+    .logo img
+      width: 7rem
+
+    .navbar-title
+      color: $grey-lighten-5
+      font-family: $font-family-general
+      font-size: $font-header-size
+      text-align: right
+
+.row.journal-body
+  .col-journal-menu,
+  .col-journal-content
+    position: relative
+    min-height: 1px
+
+  .col-journal-nav
+    padding-top: 3rem
+    padding-left: 5rem
+
+    .menu-title
+      font-family: $font-family-general
+      font-size: $font-menu-size
+      font-weight: bold
+    ul
+      li
+        font-size: $font-menu-li-size
+        list-style-type: none
+        margin-top: 1rem
+        margin-right: -1rem
+        a
+          color: $grey
+
+          &.active, &:hover, &:focus
+            color: $grey-darken-4
+            text-decoration: none
+
+      ul
+        li
+          font-size: $font-menu-sub-li-size
+          white-space: nowrap
+          overflow: hidden
+          text-overflow: ellipsis
+
+
+  .col-journal-content
+    padding-top: 5.5rem

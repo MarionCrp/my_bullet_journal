@@ -1,0 +1,35 @@
+///////////////////////
+// SM & <
+///////////////////////
+
+@media (max-width: $grid-md - 1px)
+  /// HEADER
+  header
+    height: $header-mobile-height
+
+    .row
+      height: 100%
+      padding: 0 5rem
+
+      .logo img
+        display: none
+
+      .navbar-title
+        color: $grey-lighten-5
+        font-family: $font-family-general
+        font-size: $font-header-mobile-size
+        text-align: right
+
+
+  /// MONTH TASKS
+  .month-tasks-container
+    .row
+      h2
+        margin-top: 2rem
+      .daily-task-title
+        // position: relative
+        // left: 2rem
+        font-size: 1rem
+
+    .month-cards-container
+      font-size: 1rem

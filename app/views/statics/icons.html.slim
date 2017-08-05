@@ -1,0 +1,133 @@
+doctype html
+html[lang="en"]
+  head
+    meta[charset="utf-8"]
+    meta[http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"]
+    meta[name="viewport" content="width=device-width,initial-scale=1"]
+    title
+      | Font Reference - Untitled font 1
+
+  body
+    .icon-container
+      .container
+        h1
+          | Bullet Journal Project Icons
+        p.small
+          ' This font was created with
+          a href="http://fontastic.me/"
+            | Fontastic
+        h2
+          | CSS mapping
+        ul.glyphs.css-mapping
+          li
+            .icon.icon-book
+            input[type="text" readonly="readonly" value="book"]
+          li
+            .icon.icon-wall-calendar
+            input[type="text" readonly="readonly" value="wall-calendar"]
+          li
+            .icon.icon-box
+            input[type="text" readonly="readonly" value="box"]
+          li
+            .icon.icon-checked-box
+            input[type="text" readonly="readonly" value="checked-box"]
+          li
+            .icon.icon-checked-box-two
+            input[type="text" readonly="readonly" value="checked-box-two"]
+          li
+            .icon.icon-cross-box
+            input[type="text" readonly="readonly" value="cross-box"]
+          li
+            .icon.icon-minus-box
+            input[type="text" readonly="readonly" value="minus-box"]
+          li
+            .icon.icon-plus-box
+            input[type="text" readonly="readonly" value="plus-box"]
+          li
+            .icon.icon-calendar
+            input[type="text" readonly="readonly" value="calendar"]
+          li
+            .icon.icon-garbage
+            input[type="text" readonly="readonly" value="garbage"]
+          li
+            .icon.icon-circle
+            input[type="text" readonly="readonly" value="circle"]
+          li
+            .icon.icon-checked-circle
+            input[type="text" readonly="readonly" value="checked-circle"]
+          li
+            .icon.icon-minus-circle
+            input[type="text" readonly="readonly" value="minus-circle"]
+          li
+            .icon.icon-cross-circle
+            input[type="text" readonly="readonly" value="cross-circle"]
+          li
+            .icon.icon-plus-circle
+            input[type="text" readonly="readonly" value="plus-circle"]
+          li
+            .icon.icon-user
+            input[type="text" readonly="readonly" value="user"]
+          li
+            .icon.icon-menu
+            input[type="text" readonly="readonly" value="menu"]
+
+
+        h2
+          | Character mapping
+        ul.glyphs.character-mapping
+          li
+            .icon[data-icon="a"]
+            input[type="text" readonly="readonly" value="a"]
+          li
+            .icon[data-icon="b"]
+            input[type="text" readonly="readonly" value="b"]
+          li
+            .icon[data-icon="c"]
+            input[type="text" readonly="readonly" value="c"]
+          li
+            .icon[data-icon="d"]
+            input[type="text" readonly="readonly" value="d"]
+          li
+            .icon[data-icon="e"]
+            input[type="text" readonly="readonly" value="e"]
+          li
+            .icon[data-icon="f"]
+            input[type="text" readonly="readonly" value="f"]
+          li
+            .icon[data-icon="g"]
+            input[type="text" readonly="readonly" value="g"]
+          li
+            .icon[data-icon="h"]
+            input[type="text" readonly="readonly" value="h"]
+          li
+            .icon[data-icon="i"]
+            input[type="text" readonly="readonly" value="i"]
+          li
+            .icon[data-icon="j"]
+            input[type="text" readonly="readonly" value="j"]
+          li
+            .icon[data-icon="k"]
+            input[type="text" readonly="readonly" value="k"]
+          li
+            .icon[data-icon="l"]
+            input[type="text" readonly="readonly" value="l"]
+          li
+            .icon[data-icon="m"]
+            input[type="text" readonly="readonly" value="m"]
+          li
+            .icon[data-icon="n"]
+            input[type="text" readonly="readonly" value="n"]
+          li
+            .icon[data-icon="o"]
+            input[type="text" readonly="readonly" value="o"]
+          li
+            .icon[data-icon="p"]
+            input[type="text" readonly="readonly" value="p"]
+          li
+            .icon[data-icon="q"]
+            input[type="text" readonly="readonly" value="q"]
+script
+  | (function() { var glyphs, i, len, ref; ref = document.getElementsByClassName('glyphs'); for (i = 0, len = ref.length; i < len; i++) { glyphs = ref[i]; glyphs.addEventListener('click', function(event) { if (event.target.tagName === 'INPUT') { return event.target.select(); } }); } }).call(this);
+
+coffee:
+  new Icons()

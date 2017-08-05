@@ -1,0 +1,37 @@
+.tasks-card
+  padding: 2rem
+  background-color: #fff
+  margin-top: 3rem
+  margin-left: 1rem
+  margin-right: 1rem
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 1px 10px 0 rgba(0, 0, 0, 0.1)
+
+  h3
+    border-bottom: solid 1px black
+  .tasks-list
+    margin-top: 20px
+    .task
+      font-family: $font-family-hand
+      font-size: 2rem
+      margin-bottom: 1rem
+
+      .label
+        margin-left: 1.5rem
+
+      .check-box
+        font-size: 1.7rem
+
+      .icon-box
+        color: $grey-lighten-1
+        &:hover
+          color: $grey-darken-2
+        -moz-transition:    all 400ms ease
+        -webkit-transition: all 400ms ease
+        -o-transition:      all 400ms ease
+        -ms-transition:     all 400ms ease
+        transition: all 400ms ease
+
+      &.new-task
+        input
+          height: 2rem
+          font-family: $font-family-hand
