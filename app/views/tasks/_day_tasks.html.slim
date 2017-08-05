@@ -5,8 +5,9 @@
       .col-lg-8
         .tasks-card.ml-0
           .row
-            h3.col-lg To do
-            span.col-lg.icon-plus-circle
+            h3.col-20 To do
+            = link_to "#" do
+              span.col-4.icon-plus-circle
           .tasks-list
             .task
               = link_to "#" do
@@ -23,7 +24,10 @@
 
       .col-lg-8
         .tasks-card
-          h3 Shopping List
+          .row
+            h3.col-20 Shopping List
+            = link_to "#" do
+              span.col-4.icon-plus-circle
           .tasks-list
             .task
               span.check-box.icon-box
@@ -34,7 +38,10 @@
 
       .col-lg-8
         .tasks-card.mr-0
-          h3 Recipe
+          .row
+            h3.col-20 Administratif
+            = link_to "#" do
+              span.col-4.icon-plus-circle
           .tasks-list
             .task
               span.check-box.icon-box
