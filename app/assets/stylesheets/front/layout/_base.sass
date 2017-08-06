@@ -9,7 +9,7 @@ h3
 body
   background-color: $grey-lighten-5
   font-family: $font-family-general
-  color: $grey-darken-4
+  color: $grey-darken-2
   overflow-x: hidden
 
 a
@@ -30,3 +30,14 @@ a
 
 hr
   margin: 3rem 0
+
+body
+  .hover-darken
+    color: $grey-lighten-1
+    &:hover
+      color: $grey-darken-2
+    -moz-transition:    all 700ms ease
+    -webkit-transition: all 700ms ease
+    -o-transition:      all 700ms ease
+    -ms-transition:     all 700ms ease
+    transition: all 700ms ease

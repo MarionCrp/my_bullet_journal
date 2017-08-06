@@ -4,14 +4,14 @@
       = link_to "#" do
         span.icon-plus-circle
     .col-22
-      .title-row
+      .list-title-row
         = link_to "#", class: "title-left-chevron-icon" do
-          span.icon-left-chevron-box
+          span.icon-left-chevron-box.hover-darken
         h2 30th July 2017
         = link_to "#", class: "title-right-chevron-icon" do
-          span.icon-right-chevron-box
+          span.icon-right-chevron-box.hover-darken
         = link_to "#", class: "title-calendar-icon" do
-          span.icon-calendar
+          span.icon-calendar.hover-darken
 
   .tasks-cards-container
     .row
@@ -52,16 +52,16 @@ hr
               span.icon-checked-circle
           .col-lg-1.col-sm-2.col-2
             = link_to "#" do
-              span.icon-circle
+              span.icon-circle.hover-darken
 
           .col-lg-1.col-sm-2.col-2
-            = link_to "#" do
+            = link_to "#", class: "hover-darken" do
               span.icon-circle
 
 hr
 
 .random-list-container
-  .title-row
+  .list-title-row
     h2 Random Lists
     = link_to "#", class: "title-plus-icon" do
       span.icon-plus-circle

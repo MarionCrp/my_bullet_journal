@@ -1,15 +1,15 @@
 .tasks-card
   .cross-row
     = link_to "#", class: "destroy-item" do
-      span.icon-cross
-  .title-row
+      span.icon-cross.hover-darken
+  .list-title-row
     h3.col-20 To do list
     = link_to "#" do
       span.col-4.icon-plus-circle
   .tasks-list
     .task
       = link_to "#" do
-        span.check-box.icon-box
+        span.check-box.icon-box.hover-darken
       span.label.icon Ramen
     .task
       = link_to "#" do
