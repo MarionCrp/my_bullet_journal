@@ -16,17 +16,19 @@
 // DAY TASKS
 ////////////////////////////
 .day-tasks-container
-  .row
+  .day-task-title
     a
-      font-size: 2.5rem
+      font-size: 3rem
 
   .title-row
     display: flex
     justify-content: flex-end
     align-items: center
     a
-      &.title-plus-icon
+      &.title-left-chevron-icon
         margin: auto 2.5rem auto 0
+      &.title-right-chevron-icon, &.title-calendar-icon
+        margin: auto 0 auto 2.5rem
 
 
 ///////////////////////
@@ -77,20 +79,24 @@
 
       .task-title
 
-      .icon-checked-circle
+      .icon-checked-circle, .icon-circle
         position: relative
         top: 0.3rem
-        &.checked
-          color: $grey-darken-2
-        &.unchecked
-          color: $grey-lighten-2
-          &:hover
-            color: $grey-darken-2
         -moz-transition:    all 700ms ease
         -webkit-transition: all 700ms ease
         -o-transition:      all 700ms ease
         -ms-transition:     all 700ms ease
         transition: all 700ms ease
+        &:hover
+          color: $grey-darken-2
+
+      .icon-checked-circle
+        color: $grey-darken-2
+      .icon-circle
+        color: $grey-lighten-2
+        &:hover
+          &:before
+            content: "\6b"
 
 ///////////////////////
 // RANDOM TASKS

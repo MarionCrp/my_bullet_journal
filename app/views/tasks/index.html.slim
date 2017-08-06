@@ -1,16 +1,18 @@
 .day-tasks-container
-  .row
+  .row.day-task-title
     .col-2
-      = link_to "#", class: "title-calendar-icon" do
-        span.icon-calendar
-    .col-20
+      = link_to "#" do
+        span.icon-plus-circle
+    .col-22
       .title-row
-        = link_to "#", class: "title-plus-icon" do
-          span.icon-plus-circle
+        = link_to "#", class: "title-left-chevron-icon" do
+          span.icon-left-chevron-box
         h2 30th July 2017
-    .col-2
-      = link_to "#", class: "title-calendar-icon" do
-        span.icon-calendar
+        = link_to "#", class: "title-right-chevron-icon" do
+          span.icon-right-chevron-box
+        = link_to "#", class: "title-calendar-icon" do
+          span.icon-calendar
+
   .tasks-cards-container
     .row
       .col-lg-8
@@ -47,13 +49,14 @@ hr
           .col-lg-19.col-sm-14.col-14.task-title Rendez-vous chez l'osthéo
           .col-lg-1.col-sm-2.col-2
             = link_to "#" do
-              span.icon-checked-circle.checked
+              span.icon-checked-circle
           .col-lg-1.col-sm-2.col-2
             = link_to "#" do
-              span.icon-checked-circle.unchecked
+              span.icon-circle
+
           .col-lg-1.col-sm-2.col-2
             = link_to "#" do
-              span.icon-checked-circle.unchecked
+              span.icon-circle
 
 hr
 
