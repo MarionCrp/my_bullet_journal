@@ -91,6 +91,10 @@ html[lang="en"]
           li
             .icon.icon-menu
             input readonly="readonly" type="text" value="menu"
+          li
+            .icon.icon-cross
+            input readonly="readonly" type="text" value="cross"
+
         h2 Character mapping
         ul.glyphs.character-mapping
           li
@@ -165,6 +169,9 @@ html[lang="en"]
           li
             .icon data-icon="q"
             input readonly="readonly" type="text" value="q"
+          li
+            .icon data-icon="y"
+            input readonly="readonly" type="text" value="y"
 
 script
   | (function() { var glyphs, i, len, ref; ref = document.getElementsByClassName('glyphs'); for (i = 0, len = ref.length; i < len; i++) { glyphs = ref[i]; glyphs.addEventListener('click', function(event) { if (event.target.tagName === 'INPUT') { return event.target.select(); } }); } }).call(this);
