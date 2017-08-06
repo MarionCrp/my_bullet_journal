@@ -1,6 +1,6 @@
 header
   background-color: $grey-darken-4
-  height: $header-height
+  height: $header-footer-height
 
   .row
     height: 100%
@@ -16,25 +16,25 @@ header
       text-align: right
 
 .row.journal-body
-  .col-journal-menu,
+  .col-journal-nav,
   .col-journal-content
-    position: relative
-    min-height: 1px
+    // position: relative
 
   .col-journal-nav
     padding-top: 3rem
-    padding-left: 5rem
+    padding-left: 4rem
 
     .menu-title
       font-family: $font-family-general
       font-size: $font-menu-size
       font-weight: bold
     ul
+      padding-left: 2rem
       li
         font-size: $font-menu-li-size
         list-style-type: none
         margin-top: 1rem
-        margin-right: -1rem
+        margin-right: 1rem
         a
           color: $grey
 
