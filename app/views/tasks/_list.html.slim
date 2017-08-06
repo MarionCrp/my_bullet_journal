@@ -8,10 +8,12 @@
       span.col-4.icon-plus-circle
   .tasks-list
     .task
-      span.check-box.icon-box
+      = link_to "#" do
+        span.check-box.icon-box
       span.label.icon Ramen
     .task
-      span.check-box.icon-checked-box
+      = link_to "#" do
+        span.check-box.icon-checked-box
       span.label.icon Crème brulée au thé !
 
     .task.new-task.form-group.row hidden="true"
