@@ -8,13 +8,25 @@
       span.col-4.icon-plus-circle
   .tasks-list
     .task
-      = link_to "#" do
-        span.check-box.icon-box.hover-darken
-      span.label.icon Ramen
+      .row
+        .col-2
+          = link_to "#" do
+            span.check-box.icon-box.hover-darken
+        .col-20.label
+          span.icon Ramen
+        .col-2
+          = link_to "#", class: "actions-button" do
+            span.icon-right-chevron.hover-darken
     .task
-      = link_to "#" do
-        span.check-box.icon-checked-box
-      span.label.icon Crème brulée au thé !
+      .row
+        .col-2
+          = link_to "#" do
+          span.check-box.icon-checked-box
+        .col-20.label
+          span.icon Crème brulée au thé ! at Lilalou c'fffffgest trop lon !
+        .col-2
+          = link_to "#", class: "actions-button" do
+            span.icon-right-chevron.hover-darken
 
     .task.new-task.form-group.row hidden="true"
       .col-4.span.check-box.icon-box
