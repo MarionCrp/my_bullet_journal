@@ -35,28 +35,25 @@ hr
     .col-lg-1.col-sm-2.col-2
       = link_to "#" do
         span.icon-plus-circle
-    .col-lg-1.col-sm-2.col-2.daily-task-title Crossfit
-    .col-lg-1.col-sm-2.col-2.daily-task-title Kendo
-    .col-lg-1.col-sm-2.col-2.daily-task-title Yoga
+    - @regular_task_categories.each do |regular_task_category|
+      .col-lg-1.col-sm-2.col-2.daily-task-title = regular_task_category.title
+
 
   .month-cards-container
     .calendar
-      - week_days = %w(L M M J V S D)
-      - 30.times do |n|
+      - @monthly_days.each do |day|
         .row
-          .col-lg-1.col-sm-2.col-2.week-day #{ week_days[n % 7]}
-          .col-lg-1.col-sm-2.col-2.day #{n+1}
+          .col-lg-1.col-sm-2.col-2.week-day #{ I18n.t("date.day_names_letter")[day[:wday]] }
+          .col-lg-1.col-sm-2.col-2.day #{ day[:day] }
           .col-lg-19.col-sm-14.col-14.task-title Rendez-vous chez l'osthéo
-          .col-lg-1.col-sm-2.col-2
-            = link_to "#" do
-              span.icon-checked-circle
-          .col-lg-1.col-sm-2.col-2
-            = link_to "#" do
-              span.icon-circle.hover-darken
-
-          .col-lg-1.col-sm-2.col-2
-            = link_to "#", class: "hover-darken" do
-              span.icon-circle
+          - @regular_task_categories.each do |regular_task_category|
+            .col-lg-1.col-sm-2.col-2
+              - done = day[:categories].include?(regular_task_category.id)
+              = link_to regular_tasks_path(regular_task_date: day[:date], regular_task_category_id: regular_task_category.id, done: !done), method: :post do
+                - if done
+                  span.icon-checked-circle
+                - else
+                  span.icon-circle.hover-darken
 
 hr
 
