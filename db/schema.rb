@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 20170820202259) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "categories", force: :cascade do |t|
     t.string "title"
     t.integer "position"
@@ -24,10 +27,10 @@ ActiveRecord::Schema.define(version: 20170820202259) do
   create_table "tasks", force: :cascade do |t|
     t.string "type"
     t.string "title"
-    t.integer "parent_task_id"
+    t.bigint "parent_task_id"
     t.date "date"
     t.boolean "done", default: false
-    t.integer "category_id"
+    t.bigint "category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["category_id"], name: "index_tasks_on_category_id"
