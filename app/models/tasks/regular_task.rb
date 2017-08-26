@@ -2,6 +2,9 @@ class Tasks::RegularTask < Task
 
   # Associations ===============================================================
   belongs_to :category, class_name: "Categories::RegularTask"
+  has_one :user, through: :category
+
+  validates :category, presence: true
 
   # Scopes =====================================================================
   scope :done, -> {
