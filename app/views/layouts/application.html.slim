@@ -18,23 +18,10 @@ html
     .row.journal-body
       .col-journal-nav.col-lg-5.navbar
         .menu-title Menu
-        ul
-          li
-            = link_to "Daily", tasks_path, class:"active"
-          li
-            a href="#" Monthly
-          li
-            a data-toggle="collapse" href="#collapseItem" aria-expanded="false" aria-controls="collapseItem" Other Lists
-            .collapse#collapseItem
-              ul
-                li
-                  a href="#" Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                li
-                  a href="#" To watch
-                li
-                  a href="#" To read
-            li
-              a href="#" Settings
+        - if current_user
+          = render "layouts/user_menu"
+        - else
+          = render "layouts/visitor_menu"
 
       .col-journal-content.col-lg-19
         .container

@@ -1,4 +1,4 @@
-class TasksController < ApplicationController
+class User::TasksController <  User::BaseController
   def index
     # @month = params[:month] || Time.zone.today.month
     @regular_task_categories = Categories::RegularTask.enabled

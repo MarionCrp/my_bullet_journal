@@ -1,0 +1,21 @@
+ul
+  li
+    = link_to "Daily", user_tasks_path, class:"active"
+  li
+    a href="#" Monthly
+  li
+    a data-toggle="collapse" href="#collapseTasks" aria-expanded="false" aria-controls="collapseTasks" Other Lists
+    .collapse#collapseTasks
+      ul
+        li
+          a href="#" Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        li
+          a href="#" To watch
+        li
+          a href="#" To read
+  li
+    a data-toggle="collapse" href="#collapseSettings" aria-expanded="false" aria-controls="collapseSettings" Settings
+    .collapse#collapseSettings
+      ul
+        li
+          = link_to "Sign out", destroy_user_session_path, method: :delete

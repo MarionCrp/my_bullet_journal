@@ -49,7 +49,7 @@ hr
           - @regular_task_categories.each do |regular_task_category|
             .col-lg-1.col-sm-2.col-2
               - done = day[:categories].include?(regular_task_category.id)
-              = link_to regular_tasks_path(regular_task_date: day[:date], regular_task_category_id: regular_task_category.id, done: !done), method: :post do
+              = link_to user_regular_tasks_path(regular_task_date: day[:date], regular_task_category_id: regular_task_category.id, done: !done), method: :post do
                 - if done
                   span.icon-checked-circle
                 - else
