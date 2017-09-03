@@ -1,0 +1,4 @@
+script#toggle-task-btn-template type="text/x-template"
+  div
+    a href="#" @click.prevent.stop="toggleDone"
+      span :class='done ? "icon-checked-circle" : "icon-circle hover-darken"'

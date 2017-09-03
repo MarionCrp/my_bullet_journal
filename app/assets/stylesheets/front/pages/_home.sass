@@ -40,8 +40,19 @@
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 1px 10px 0 rgba(0, 0, 0, 0.1)
   padding: 3rem
   .row
-    h2
-      text-align: center
+    .list-title-row
+      display: flex
+      margin: auto
+      width: 40%
+
+      h2
+      a
+        span
+          font-size: 2rem
+        &.title-left-chevron-icon
+          margin: auto 2.5rem auto 0
+        &.title-right-chevron-icon, &.title-calendar-icon
+          margin: auto 0 auto 2.5rem
     .daily-task-title
       font-size: 1.5rem
       font-weight: bold
@@ -54,16 +65,17 @@
       transform: rotate(-65deg)
       transform-origin: left top 0
       position: relative
-      top: 6.5rem
     .icon-plus-circle
       position: relative
-      top: 5rem
+      top: -2rem
       font-size: 1.7rem
 
 
   .month-cards-container
-    font-size: 2rem
-    margin-top: 3rem
+    a
+      text-decoration: none
+    font-size: 1.5rem
+    margin-top: -0.5rem
 
     .row
       &:hover

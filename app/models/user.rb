@@ -5,6 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :regular_task_categories, class_name: "Categories::RegularTask"
-  has_many :regular_tasks, through: :regular_task_categories, class_name: "Tasks::RegularTask"
+  has_many :regular_tasks, class_name: "Tasks::RegularTask"
 
 end
