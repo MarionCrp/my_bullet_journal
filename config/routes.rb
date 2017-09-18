@@ -6,6 +6,11 @@ Rails.application.routes.draw do
     resources :regular_tasks, only: [:index] do
       get 'toggle_done', on: :collection
     end
+    resources :regular_task_categories, only: [:index, :new, :edit, :create, :update , :destroy] do
+      member do
+        put :toggle_enabled
+      end
+    end
     root 'tasks#index'
   end
   get "/:filename", to: "statics#show"

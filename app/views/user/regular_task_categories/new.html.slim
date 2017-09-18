@@ -1,0 +1,7 @@
+#app
+  .day-tasks-container
+    = link_to "Back to categories", user_regular_task_categories_path
+
+    = form_for @category, as: :regular_task_category, url: {action: "create"} do |f|
+      = f.text_field :title
+      = f.submit "Create"
