@@ -25,44 +25,10 @@
         .col-lg-8
           = render "list"
 
-
   hr
 
   .month-tasks-container
-    .row
-      .list-title-row
-        = link_to "#", class: "title-left-chevron-icon" do
-          span.icon-left-chevron-box.hover-darken
-        h2 July 2017
-        = link_to "#", class: "title-right-chevron-icon" do
-          span.icon-right-chevron-box.hover-darken
-    .row
-      .col-lg-1.col-sm-2.col-2
-      .col-lg-19.col-sm-14.col-14
-      .col-lg-1.col-sm-2.col-2
-        = link_to "#" do
-          span.icon-plus-circle
-      - @regular_task_categories.each do |regular_task_category|
-        .col-lg-1.col-sm-2.col-2.daily-task-title = regular_task_category.title
-
-    //regular-tasks-list index-url=comments_url resource-url=dashboard_comments_url :current-talent-id=current_talent&.id :commentable='{ type: "Media", id: media.id }'
     regular-tasks-list days-url=user_regular_tasks_url :current-user-id=current_user&.id
-    //.month-cards-container
-      .calendar
-
-        //- @monthly_days.each do |day|
-          .row
-            .col-lg-1.col-sm-2.col-2.week-day #{ I18n.t("date.day_names_letter")[day[:wday]] }
-            .col-lg-1.col-sm-2.col-2.day #{ day[:day] }
-            .col-lg-19.col-sm-14.col-14.task-title Rendez-vous chez l'osthéo
-            - @regular_task_categories.each do |regular_task_category|
-              .col-lg-1.col-sm-2.col-2
-                - done = day[:categories].include?(regular_task_category.id)
-                = link_to user_regular_tasks_path(regular_task_date: day[:date], regular_task_category_id: regular_task_category.id, done: !done), method: :post do
-                  - if done
-                    span.icon-checked-circle
-                  - else
-                    span.icon-circle.hover-darken
 
   hr
 

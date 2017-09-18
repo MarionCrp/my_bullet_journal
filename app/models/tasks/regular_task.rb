@@ -7,9 +7,6 @@ class Tasks::RegularTask < Task
   validates :category, presence: true
 
   # Scopes =====================================================================
-  scope :done, -> {
-    where(done: true)
-  }
 
   scope :by_month, -> (month_with_year) {
     beginning_of_month = month_with_year.beginning_of_month

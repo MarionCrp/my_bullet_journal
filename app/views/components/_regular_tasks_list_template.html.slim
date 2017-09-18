@@ -1,7 +1,23 @@
 script#regular-tasks-list-template type="text/x-template"
-  div.month-cards-container
-    div v-for="day in monthlyDays"
-      .row
+  div
+    .row
+      .list-title-row
+        a href="#" class="title-left-chevron-icon" @click.prevent.stop="getPreviousMonth"
+          span.icon-left-chevron-box.hover-darken
+        h2
+          | {{ month }}
+        a href="#" class="title-right-chevron-icon" @click.prevent.stop="getNextMonth"
+          span.icon-right-chevron-box.hover-darken
+    .row
+      .col-lg-1.col-sm-2.col-2
+      .col-lg-19.col-sm-14.col-14
+      .col-lg-1.col-sm-2.col-2
+        = link_to "#" do
+          span.icon-plus-circle
+      .col-lg-1.col-sm-2.col-2.daily-task-title v-for="regular_task_category in regularTaskCategories"
+        | {{ regular_task_category.title }}
+    .month-cards-container
+      .row v-for="day in monthlyDays"
         .col-lg-1.col-sm-2.col-2.week-day
           | {{ day.wday }}
         .col-lg-1.col-sm-2.col-2.day
@@ -9,4 +25,4 @@ script#regular-tasks-list-template type="text/x-template"
         .col-lg-19.col-sm-14.col-14.task-title Rendez-vous chez l'osthéo
         div v-for="regular_task_category in regularTaskCategories"
           .col-lg-1.col-sm-2.col-2
-            toggle-task-btn resource-url=toggle_done_user_regular_tasks_path :day="day" :regular_task_category="regular_task_category.id"
+            toggle-task-btn resource-url=toggle_done_user_regular_tasks_path :day="day" :regular_task_category="regular_task_category.id" :taskDone="dayIsDone(day, regular_task_category.id)"

@@ -1,12 +1,17 @@
 class User::RegularTasksController < User::BaseController
+
   def index
-    # @month = params[:month] || Time.zone.today.month
-    @regular_tasks = Tasks::RegularTask.done.by_month(Time.zone.today)
+    if params[:date].present?
+      @date = Time.parse(params[:date])
+    else
+      @date = Time.zone.today.beginning_of_month
+    end
+    @regular_tasks = Tasks::RegularTask.done.by_month(@date)
     @regular_task_categories = Categories::RegularTask.enabled
 
     @monthly_days = []
-    i = Time.zone.today.beginning_of_month
-    while i.month == Time.zone.today.month do
+    i = @date.beginning_of_month
+    while i.month == @date.month do
       @monthly_days << {
         date: i,
         wday: I18n.t("date.day_names_letter")[i.wday],
@@ -19,9 +24,11 @@ class User::RegularTasksController < User::BaseController
       active_day = @monthly_days.select { |day| day[:day] == task.date.day }[0]
       active_day[:categories] << task.category.id
     end
+
     respond_to do |format|
       format.json {
-        render json: { monthly_days: @monthly_days, regular_tasks: @regular_tasks, regular_task_categories: @regular_task_categories}
+        render json: { monthly_days: @monthly_days, regular_tasks: @regular_tasks, regular_task_categories: @regular_task_categories, date: @date, month: I18n.l(@date, format: '%B %Y'), previous_month_url: user_regular_tasks_path(date: (@date - 1.month).beginning_of_month), next_month_url: user_regular_tasks_path(date: (@date + 1.month).beginning_of_month)
+        }
       }
     end
   end

@@ -4,11 +4,15 @@ Vue.component 'toggle-task-btn', {
     resourceUrl: String,
     day: Object,
     regular_task_category: Number
+    taskDone: Boolean
   },
   data: -> {
-    resource: Vue.resource("#{this.resourceUrl}{/id}"),
-    done: this.day.categories.includes(this.regular_task_category)
+    done: this.taskDone
   },
+  watch: {
+    taskDone: ->
+      this.done = this.taskDone
+  }
   computed: {
     taskParams: ->
       {
