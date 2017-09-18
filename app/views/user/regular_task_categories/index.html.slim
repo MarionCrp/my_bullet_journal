@@ -3,7 +3,7 @@
     = link_to "Add a category", new_user_regular_task_category_path
 
     hr
-    - if @categories.empty?
+    - if !@categories.present?
       p No categories
     - else
       table.table
