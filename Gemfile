@@ -45,6 +45,8 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'devise'
 
+gem 'rails-i18n', '~> 5.0.0'
+
 group :production do
   gem 'pg'
 end

@@ -17,6 +17,8 @@ en:
     - Friday
     - Saturday
     month_names:
+    # empty string is used so we can use Time.zone.now.month to find the month
+    -
     - January
     - February
     - Mars
