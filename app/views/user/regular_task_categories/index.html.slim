@@ -1,11 +1,16 @@
 #app
   .day-tasks-container
     = link_to "Add a category", new_user_regular_task_category_path
-    table.table
-      tbody
-        - @categories.each do |category|
-          tr
-            td = category.title
-            td = link_to "Update", edit_user_regular_task_category_path(category)
-            td = link_to "#{category.enable? ? "Disabled" : "Enable"}", toggle_enabled_user_regular_task_category_path(category), method: :put
-            td = link_to "Destroy", user_regular_task_category_path(category), method: :delete
+
+    hr
+    - if @categories.empty?
+      p No categories
+    - else
+      table.table
+        tbody
+          - @categories.each do |category|
+            tr
+              td = category.title
+              td = link_to "Update", edit_user_regular_task_category_path(category)
+              td = link_to "#{category.enable? ? "Disabled" : "Enable"}", toggle_enabled_user_regular_task_category_path(category), method: :put
+              td = link_to "Destroy", user_regular_task_category_path(category), method: :delete
